@@ -246,6 +246,7 @@ svg { display: block; }
   background-repeat: no-repeat;
   filter: grayscale(1) brightness(0.78);
 }
+.art-photo.dim { filter: grayscale(1) brightness(0.6); }
 @media (min-width: 900px) {
   /* portrait image on a wide screen: keep the subject right of the caption */
   .art-photo { background-position: 72% 20%; }
