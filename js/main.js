@@ -112,6 +112,9 @@ function buildChrome() {
 
   document.getElementById("menu-open").addEventListener("click", () => overlay.classList.add("open"));
   overlay.querySelector(".menu-close").addEventListener("click", () => overlay.classList.remove("open"));
+  addEventListener("keydown", (e) => {
+    if (e.key === "Escape") overlay.classList.remove("open");
+  });
 
   // top bar turns solid once you scroll past the hero-ish zone
   addEventListener("scroll", () => top.classList.toggle("solid", scrollY > 40), { passive: true });
