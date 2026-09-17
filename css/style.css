@@ -184,6 +184,32 @@ svg { display: block; }
   max-width: 34ch;
 }
 
+/* prev / next arrows */
+.hero-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 4;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text);
+  opacity: 0.75;
+}
+.hero-arrow svg {
+  width: 30px;
+  height: 30px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.6;
+}
+.hero-arrow:hover { opacity: 1; }
+.hero-arrow.prev { left: 8px; }
+.hero-arrow.next { right: 8px; }
+.hero-arrow.next svg { transform: scaleX(-1); }
+
 /* slide indicator — thin bars, bottom center */
 .hero-progress {
   position: absolute;

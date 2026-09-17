@@ -159,6 +159,24 @@ function initHero() {
   let idx = 0;
   let timer;
 
+  const prev = document.createElement("button");
+  prev.className = "hero-arrow prev";
+  prev.setAttribute("aria-label", "Previous slide");
+  prev.innerHTML = MM_ICONS.back;
+  const next = document.createElement("button");
+  next.className = "hero-arrow next";
+  next.setAttribute("aria-label", "Next slide");
+  next.innerHTML = MM_ICONS.back;
+  hero.appendChild(prev);
+  hero.appendChild(next);
+  prev.addEventListener("click", () => go(idx - 1, true));
+  next.addEventListener("click", () => go(idx + 1, true));
+
+  addEventListener("keydown", (e) => {
+    if (e.key === "ArrowLeft") go(idx - 1, true);
+    if (e.key === "ArrowRight") go(idx + 1, true);
+  });
+
   slides.forEach((_, i) => {
     const b = document.createElement("button");
     b.setAttribute("aria-label", "Slide " + (i + 1));
