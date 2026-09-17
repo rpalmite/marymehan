@@ -76,7 +76,7 @@ function buildChrome() {
   top.className = "topbar";
   top.innerHTML = `
     <div class="left">
-      ${page !== "home" ? `<a class="icon-btn" href="index.html" aria-label="Back">${MM_ICONS.back}</a>` : ""}
+      <button class="icon-btn" id="menu-open" aria-label="Menu">${MM_ICONS.menu}</button>
       <a class="brand" href="index.html">mary mehan</a>
     </div>
     <div class="right">
@@ -91,7 +91,6 @@ function buildChrome() {
   nav.className = "bottomnav";
   nav.setAttribute("aria-label", "Primary");
   nav.innerHTML =
-    `<button id="menu-open" aria-label="Menu">${MM_ICONS.menu}</button>` +
     MM_PAGES.map(
       (p) =>
         `<a href="${p.href}" class="${p.id === page ? "active" : ""}" aria-label="${p.label}">${MM_ICONS[p.icon]}</a>`
