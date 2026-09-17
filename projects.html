@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0e0e0e" />
+  <title>Projects — mary mehan</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="projects">
+
+  <div class="page-hero">
+    <div class="wrap">
+      <h1>Projects</h1>
+      <p id="proj-count">6 works</p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="chips" id="chips"></div>
+    <div class="grid-products" id="proj-grid"></div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-brand">mary mehan</div>
+      <div class="foot-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="control.html">Control</a>
+      </div>
+      <div class="foot-fine">
+        <span id="foot-email">hello@marymehan.com</span><br />
+        © 2026 Mary Mehan. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const data = mmLoad();
+      document.getElementById("foot-email").textContent = data.email;
+
+      const grid = document.getElementById("proj-grid");
+      const chipsBox = document.getElementById("chips");
+      const count = document.getElementById("proj-count");
+      const cats = ["All", ...new Set(data.projects.map((p) => p.cat))];
+      let active = "All";
+
+      function draw() {
+        const list =
+          active === "All"
+            ? data.projects
+            : data.projects.filter((p) => p.cat === active);
+        renderRow(grid, list);
+        count.textContent = `${list.length} work${list.length === 1 ? "" : "s"}`;
+      }
+
+      cats.forEach((c) => {
+        const b = document.createElement("button");
+        b.className = "chip" + (c === active ? " on" : "");
+        b.textContent = c;
+        b.addEventListener("click", () => {
+          active = c;
+          chipsBox
+            .querySelectorAll(".chip")
+            .forEach((x) => x.classList.toggle("on", x === b));
+          draw();
+        });
+        chipsBox.appendChild(b);
+      });
+
+      draw();
+    });
+  </script>
+</body>
+</html>

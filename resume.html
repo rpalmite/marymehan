@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0e0e0e" />
+  <title>Resume — mary mehan</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="resume">
+
+  <div class="page-hero">
+    <div class="wrap">
+      <h1>Resume</h1>
+      <p>Experience · Education · Skills</p>
+    </div>
+  </div>
+
+  <div class="wrap resume">
+
+    <div class="resume-block">
+      <h3>Experience</h3>
+      <div class="resume-item">
+        <div class="when">2023 — Now</div>
+        <div class="what">
+          <strong>Senior Designer</strong>
+          <em>Studio Meridian — New York</em>
+          <p>Lead designer on brand and digital engagements. Directed the Meridian rebrand across print, packaging, and web; managed a team of three designers.</p>
+        </div>
+      </div>
+      <div class="resume-item">
+        <div class="when">2020 — 2023</div>
+        <div class="what">
+          <strong>Designer</strong>
+          <em>Norr &amp; Co — Brooklyn</em>
+          <p>Designed e-commerce experiences and editorial systems for retail and publishing clients. Shipped Norr Commerce, a full storefront redesign.</p>
+        </div>
+      </div>
+      <div class="resume-item">
+        <div class="when">2018 — 2020</div>
+        <div class="what">
+          <strong>Junior Designer</strong>
+          <em>Paper Weather Press</em>
+          <p>Production and layout for a quarterly print journal; built the studio's first type specimen library.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="resume-block">
+      <h3>Education</h3>
+      <div class="resume-item">
+        <div class="when">2014 — 2018</div>
+        <div class="what">
+          <strong>BFA, Graphic Design</strong>
+          <em>Rhode Island School of Design</em>
+        </div>
+      </div>
+    </div>
+
+    <div class="resume-block">
+      <h3>Skills</h3>
+      <div class="skill-tags">
+        <span>Brand Identity</span>
+        <span>Editorial Design</span>
+        <span>Art Direction</span>
+        <span>Typography</span>
+        <span>UX / UI</span>
+        <span>Figma</span>
+        <span>Adobe CC</span>
+        <span>HTML / CSS</span>
+        <span>Print Production</span>
+      </div>
+    </div>
+
+    <div class="resume-block">
+      <h3>Contact</h3>
+      <div class="resume-item">
+        <div class="when">Email</div>
+        <div class="what"><strong id="contact-email">hello@marymehan.com</strong></div>
+      </div>
+      <div class="resume-item">
+        <div class="when">Based in</div>
+        <div class="what"><strong>New York, NY</strong></div>
+      </div>
+    </div>
+
+    <div class="resume-actions">
+      <a class="btn" id="email-btn" href="mailto:hello@marymehan.com">Email me</a>
+      <a class="btn ghost" href="#" onclick="window.print(); return false;">Print / PDF</a>
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-brand">mary mehan</div>
+      <div class="foot-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="control.html">Control</a>
+      </div>
+      <div class="foot-fine">
+        <span id="foot-email">hello@marymehan.com</span><br />
+        © 2026 Mary Mehan. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const data = mmLoad();
+      document.getElementById("foot-email").textContent = data.email;
+      document.getElementById("contact-email").textContent = data.email;
+      document.getElementById("email-btn").href = "mailto:" + data.email;
+    });
+  </script>
+</body>
+</html>

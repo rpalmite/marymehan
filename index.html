@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0e0e0e" />
+  <title>mary mehan — portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="home">
+
+  <!-- full-screen hero carousel -->
+  <section class="hero" aria-label="Featured">
+    <div class="hero-track">
+      <div class="hero-slide">
+        <div class="slide-art art-photo" style="background-image: url('img/hero-1.jpg')"></div>
+        <div class="slide-caption">
+          <div class="slide-title">Mary<br />Mehan</div>
+          <div class="slide-sub">Designer &amp; art director.<br />Identities, editorial, and digital — New York.</div>
+        </div>
+      </div>
+      <div class="hero-slide">
+        <div class="slide-art art-figure"></div>
+        <div class="slide-caption">
+          <div class="slide-title">The<br />Work</div>
+          <div class="slide-sub">Identities, editorial, and digital.<br />Selected projects, 2018 to now.</div>
+        </div>
+      </div>
+      <div class="hero-slide">
+        <div class="slide-art art-2" data-mark="26"></div>
+        <div class="slide-caption">
+          <div class="slide-title">Atlas<br />Field Guide</div>
+          <div class="slide-sub">172 pages of maps, margins, and quiet type.<br />Editorial design, 2025.</div>
+        </div>
+      </div>
+      <div class="hero-slide">
+        <div class="slide-art art-3" data-mark="NC"></div>
+        <div class="slide-caption">
+          <div class="slide-title">Norr<br />Commerce</div>
+          <div class="slide-sub">A storefront that gets out of the way.<br />UX / UI, shipped 2025.</div>
+        </div>
+      </div>
+      <div class="hero-slide">
+        <div class="slide-art art-portrait"></div>
+        <div class="slide-caption">
+          <div class="slide-title">Say<br />Hello</div>
+          <div class="slide-sub">Now booking for 2026.<br /><span id="hero-email">hello@marymehan.com</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-progress"></div>
+  </section>
+
+  <!-- selected work row -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Selected Work</h2>
+        <a class="more" href="projects.html">View all</a>
+      </div>
+      <div class="scroll-row" id="home-row"></div>
+    </div>
+  </section>
+
+  <!-- two-column tiles -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Explore</h2>
+      </div>
+      <div class="grid-2">
+        <a class="cat-tile" href="projects.html">
+          <span class="tile-label">Projects<small>Case studies &amp; selected work</small></span>
+        </a>
+        <a class="cat-tile" href="resume.html">
+          <span class="tile-label">Resume<small>Experience · Skills · Contact</small></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- statement strip -->
+  <section class="statement">
+    <div class="wrap">
+      <div class="kicker">About</div>
+      <p id="statement-text">Work that holds its shape.</p>
+      <a class="cta" href="resume.html">Get in touch</a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="foot-brand">mary mehan</div>
+      <div class="foot-links">
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+        <a href="resume.html">Resume</a>
+        <a href="control.html">Control</a>
+      </div>
+      <div class="foot-fine">
+        <span id="foot-email">hello@marymehan.com</span><br />
+        © 2026 Mary Mehan. All rights reserved.<br />
+        Built with intent. No cookies, no tracking.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const data = mmLoad();
+      document.getElementById("statement-text").textContent = data.statement;
+      document.getElementById("foot-email").textContent = data.email;
+      document.getElementById("hero-email").textContent = data.email;
+      renderRow(document.getElementById("home-row"), data.projects.slice(0, 5));
+    });
+  </script>
+</body>
+</html>
